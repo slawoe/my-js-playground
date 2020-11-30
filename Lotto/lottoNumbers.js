@@ -2,6 +2,7 @@ let lottoNumbers = [];
 let numberOfFields;
 let system;
 const zusatzzahl = Math.floor(Math.random() * 10);
+const numbers = document.querySelector("#numbers");
 
 function whichSystem() {
   systemAnswer = prompt("Welches System wird gespielt? Lotto oder Euro?");
@@ -57,9 +58,13 @@ if (system === "lotto") {
       lottoNumbers[i] = ("0" + lottoNumbers[i]).slice(-2);
     }
     lottoNumbers.sort();
-    console.log(`Feld ${[i + 1]}: ${lottoNumbers}`);
+    const numbersDIV = document.createElement("span");
+    numbersDIV.innerText = `Feld ${[i + 1]}: ${lottoNumbers}`;
+    numbers.append(numbersDIV);
   }
-  console.log(`Zusatzzahl lautet: ${zusatzzahl}`);
+  const numbersDIV = document.createElement("span");
+  numbersDIV.innerText = `Zusatzzahl lautet: ${zusatzzahl}`;
+  numbers.append(numbersDIV);
 } else if (system === "euro") {
   function howManyFields() {
     numberOfFields = prompt(
@@ -100,23 +105,27 @@ if (system === "lotto") {
       lottoNumbers[i] = ("0" + lottoNumbers[i]).slice(-2);
     }
     lottoNumbers.sort();
-    console.log(`Feld ${[i + 1]}: ${lottoNumbers}`);
+    const numbersDIV = document.createElement("span");
+    numbersDIV.innerText = `Feld ${[i + 1]}: ${lottoNumbers}`;
+    numbers.append(numbersDIV);
     let zusatzzahl = Math.floor(Math.random() * 10);
     let zusatzzahl2 = Math.floor(Math.random() * 10);
     if (zusatzzahl === zusatzzahl2) {
-      console.log(`Zusatzzahlen lauten: ${zusatzzahl} + ${zusatzzahl2++}`);
+      const numbersDIV = document.createElement("span");
+      numbersDIV.innerText = `Zusatzzahlen lauten: ${zusatzzahl} + ${zusatzzahl2++}`;
+      numbers.append(numbersDIV);
     } else if (zusatzzahl2 === "10") {
-      console.log(
-        `Zusatzzahlen lauten: ${zusatzzahl} + ${(zusatzzahl2 -= Math.floor(
-          Math.random() * 8 + 1
-        ))}`
-      );
+      const numbersDIV = document.createElement("span");
+      numbersDIV.innerText = `Zusatzzahlen lauten: ${zusatzzahl} + ${(zusatzzahl2 -= Math.floor(
+        Math.random() * 8 + 1
+      ))}`;
+      numbers.append(numbersDIV);
     } else {
-      console.log(
-        `Die Zusatzzahlen lauten für Feld ${[
-          i + 1,
-        ]}: ${zusatzzahl} + ${zusatzzahl2}`
-      );
+      const numbersDIV = document.createElement("span");
+      numbersDIV.innerText = `Die Zusatzzahlen lauten für Feld ${[
+        i + 1,
+      ]}: ${zusatzzahl} + ${zusatzzahl2}`;
+      numbers.append(numbersDIV);
     }
   }
 } else {
