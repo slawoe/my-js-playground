@@ -28,7 +28,7 @@ function genreateNumbers(length, numberOfNumbers) {
       });
     }
   }
-  return numbers;
+  return numbers.join(", ");
 }
 
 switch (system) {
