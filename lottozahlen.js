@@ -20,6 +20,8 @@ for (let i = 0; i < numberOfFields; i++) {
   console.log("Lotto");
 }
 
+// EUROJACKPOT
+
 function genreateEuroJackpotNumbers() {
   let lottoNumbers = [];
   for (let i = 0; lottoNumbers.length < 5; i++) {
