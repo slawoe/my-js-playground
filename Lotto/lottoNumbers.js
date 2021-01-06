@@ -22,7 +22,7 @@ function genreateNumbers(length, numberOfNumbers) {
     if (numbers.includes(number)) {
       number = Math.floor(Math.random() * numberOfNumbers + 1);
     } else {
-      numbers.push(" " + number);
+      numbers.push(number);
       numbers.sort((a, b) => {
         return a - b;
       });
