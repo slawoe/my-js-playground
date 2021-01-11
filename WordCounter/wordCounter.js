@@ -1,14 +1,24 @@
 const textarea = document.querySelector("textarea");
+const counterSpan = document.querySelector("#counter");
 
 function counter() {
+  function indexAndDeleteUnneededSymbols() {
+    if (text.indexOf("") > -1) {
+      text.splice(text.indexOf(""), 1);
+    }
+    if (text.indexOf("-") > -1) {
+      text.splice(text.indexOf("-"), 1);
+    }
+  }
   let text = textarea.value;
   text = text.split(`\n\n`);
   text = text.join(" ");
   text = text.split(`\n`);
   text = text.join(" ");
   text = text.split(" ");
+  text.forEach((word) => indexAndDeleteUnneededSymbols());
   console.log(text);
-  console.log(text.length);
+  counterSpan.innerText = `Die Anzahl der Wörter beträgt: ${text.length}`;
 }
 
 textarea.addEventListener("input", counter);
