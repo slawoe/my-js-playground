@@ -1,6 +1,5 @@
 const textarea = document.querySelector("textarea");
 const counterSpan = document.querySelector("#counter");
-
 counterSpan.innerText = `Die Anzahl der Wörter beträgt: 0`;
 
 function counter() {
@@ -13,13 +12,8 @@ function counter() {
     }
   }
   let text = textarea.value;
-  text = text.split(`\n\n`);
-  text = text.join(" ");
-  text = text.split(`\n`);
-  text = text.join(" ");
-  text = text.split(" ");
+  text = text.split(`\n\n`).join(" ").split(`\n`).join(" ").split(" ");
   text.forEach((word) => indexAndDeleteUnneededSymbols());
-  console.log(text);
   counterSpan.innerText = `Die Anzahl der Wörter beträgt: ${text.length}`;
 }
 
