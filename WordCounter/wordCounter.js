@@ -1,6 +1,8 @@
 const textarea = document.querySelector("textarea");
 const counterSpan = document.querySelector("#counter");
 
+counterSpan.innerText = `Die Anzahl der Wörter beträgt: 0`;
+
 function counter() {
   function indexAndDeleteUnneededSymbols() {
     if (text.indexOf("") > -1) {
