@@ -2,6 +2,8 @@ const textarea = document.querySelector("textarea");
 
 function counter() {
   let text = textarea.value;
+  text = text.split(`\n\n`);
+  text = text.join(" ");
   text = text.split(`\n`);
   text = text.join(" ");
   text = text.split(" ");
