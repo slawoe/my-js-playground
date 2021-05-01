@@ -1,0 +1,105 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Bebas Neue", cursive;
+  letter-spacing: 0.1rem;
+  font-size: 2rem;
+}
+
+body {
+  min-height: 100vh;
+  background: black;
+  color: grey;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input,
+button {
+  font-family: "Bebas Neue", cursive;
+  border: none;
+}
+
+p {
+  padding: 2rem;
+}
+
+input {
+  background-color: black;
+  color: grey;
+  font-size: 2rem;
+}
+
+span {
+  font-size: 2rem;
+  position: relative;
+  top: -5.5px;
+  padding-left: 1rem;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+  opacity: 0.5;
+  transform: scale(0.75);
+  padding: 0 0.5rem;
+}
+
+input:focus {
+  background-color: rgba(6, 158, 6, 0.55);
+}
+
+input:focus,
+button:hover {
+  outline-color: grey;
+  color: white;
+}
+
+button {
+  padding: 0.25rem 0.5rem;
+  letter-spacing: 0.1rem;
+  background: grey;
+  border-radius: 1rem;
+  margin: 0 0.25rem;
+  font-size: 0.5rem;
+}
+
+#startButton:hover {
+  background-color: rgba(6, 158, 6, 0.75);
+}
+
+#pauseButton:hover {
+  background: rgba(0, 153, 255, 0.75);
+}
+
+#resetButton:hover {
+  background: rgba(162, 10, 223, 0.89);
+}
+
+#resetCountdownButton:hover {
+  background: rgba(10, 223, 223, 0.89);
+}
+
+#stopButton:hover {
+  background: rgba(255, 0, 0, 0.75);
+}
+
+#stopButton:disabled:hover,
+#resetButton:disabled:hover,
+#pauseButton:disabled:hover,
+#startButton:disabled:hover,
+#resetCountdownButton:disabled:hover {
+  background: grey;
+  color: #606060;
+}
+
+.timer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
